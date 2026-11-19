@@ -17,6 +17,8 @@ jobs:
           java-version: 17
       - run: npm install
       - run: npx cap add android
+      - name: Aplicar icono
+        run: cp -r icons/res/. android/app/src/main/res/
       - run: npx cap sync android
       - name: Compilar APK
         run: cd android && chmod +x gradlew && ./gradlew assembleDebug
